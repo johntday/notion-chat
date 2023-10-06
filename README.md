@@ -1,7 +1,6 @@
-# Chatbot to answer your questions as a conversational agent from a Notion knowledge base 
-[![Build Status](https://travis-ci.com/johntday/hybris-chatbot.svg?branch=main)](https://travis-ci.com/johntday/hybris-chatbot)
+# Chatbot to answer your questions as a conversational agent from a Notion knowledge base
 [![Python 3.8](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/downloads/release/python-380/)
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/johntday/hybris-chatbot/chat.py)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://johntday-notion-chat-chat-xcbtq4.streamlit.app/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Purpose
@@ -26,13 +25,13 @@ Follow these steps to set up and run the python app locally :
 Clone the repository :
 
 ```bash
-git clone https://github.com/johntday/hybris-chatbot.git
+git clone https://github.com/johntday/notion-chat.git
 ```
 
 Navigate to the project directory :
 
 ```bash
-cd hybris-chatbot
+cd notion-chat
 ```
 
 Create a virtual environment :
