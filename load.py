@@ -1,10 +1,8 @@
 import argparse
-import os
 
 from dotenv import load_dotenv
 
 from mods.load_util import ntfy_notification
-from mods.faiss_util import load_faiss
 from mods.qdrant_util import load_qdrant
 
 
@@ -45,7 +43,8 @@ if __name__ == '__main__':
         if args.target == 'qdrant':
             load_qdrant(args)
         elif args.target == 'local':
-            load_faiss(args)
+            print("Loading locally not implemented yet")
+            exit(1)
         else:
             print(args)
             print(f"Invalid target: {args.target}")

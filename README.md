@@ -5,16 +5,20 @@
 
 ## Purpose
 An experimental AI chatbot using Notion database as knowledge base. The chatbot is built using
-- [Streamlit](https://streamlit.io/) for the web app, and 
-- [Qdrant](https://qdrant.tech/) for vector search, and
-- [OpenAI](https://openai.com/blog/openai-api/) for text generation and embeddings, and
-- [Notion](https://developers.notion.com/) for fetching content and metadata from Notion database.
+- [Streamlit](https://streamlit.io/) for the web app
+- [Qdrant](https://qdrant.tech/) for vector search
+- [OpenAI](https://openai.com/blog/openai-api/) for text generation and embeddings
+- [Notion](https://developers.notion.com/) for fetching content and metadata from Notion database
 
-## Demo
+## DEMO
 Use the following link to try it out :
 [Chatbot using a knowledge base pulled from Notion database](https://johntday-notion-chat-chat-xcbtq4.streamlit.app/)
 
-## How to Run Locally
+fixme: qdrant
+
+fixme: notion
+
+## HOW TO RUN THE APP LOCALLY
 Follow these steps to set up and run the python app locally :
 
 ### Prerequisites
@@ -46,7 +50,7 @@ Install the required dependencies in the virtual environment :
 pip install -r requirements.txt
 ```
 
-Launch the chat service locally :
+Run the app locally :
 
 ```bash
 streamlit run chat.py
