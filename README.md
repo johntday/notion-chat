@@ -13,7 +13,7 @@ An experimental AI chatbot using Notion database as knowledge base. The chatbot 
 
 ## Demo
 Use the following link to try it out :
-[Chatbot using a knowledge base pulled from Notion database](https://johntday-hybris-chatbot-hybris-chatbot-njimxu.streamlit.app/)
+[Chatbot using a knowledge base pulled from Notion database](https://johntday-notion-chat-chat-xcbtq4.streamlit.app/)
 
 ## How to Run Locally
 Follow these steps to set up and run the python app locally :
