@@ -1,6 +1,5 @@
 import os
 import streamlit as st
-from langchain.memory import ConversationBufferMemory
 
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import Qdrant
@@ -105,7 +104,7 @@ def setup_chatbot(model_name, temperature, k, search_type, verbose):
     """
     Sets up the chatbot with the uploaded file, model, and temperature
     """
-    prompt_template = """You are an AI expert with SAP Commerce Cloud, also known as Hybris.  Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question. If you do not know the answer reply with 'I am sorry'.
+    prompt_template = """SYSTEM: You are an AI expert with SAP Commerce Cloud, also known as Hybris.  Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question. If you do not know the answer reply with 'I am sorry'.\n
         ---
         Chat History:
         {chat_history}
@@ -123,13 +122,13 @@ def setup_chatbot(model_name, temperature, k, search_type, verbose):
     collection_name = os.getenv("QDRANT_COLLECTION_NAME")
     vectors = get_vector_db(q_client, collection_name, embeddings)
 
-    if not st.session_state.get("chatbot_memory"):
-        st.session_state["chatbot_memory"] = ConversationBufferMemory(
-            memory_key="chat_history",
-            input_key='question',
-            output_key='answer',
-            return_messages=True
-        )
+    # if "chatbot_memory" not in st.session_state or st.session_state["chatbot_reset"]:
+    #     st.session_state["chatbot_memory"] = ConversationBufferMemory(
+    #         memory_key="chat_history",
+    #         input_key='question',
+    #         output_key='answer',
+    #         return_messages=True
+    #     )
 
     qa = ConversationalRetrievalChain.from_llm(
         ChatOpenAI(model_name=model_name, temperature=temperature),

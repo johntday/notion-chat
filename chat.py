@@ -43,7 +43,7 @@ def main():
     if not user_api_key:
         layout.show_api_key_missing()
     else:
-        if not st.session_state.get("chatbot"):
+        if "chatbot" not in st.session_state:
             print("Setting up chatbot...") if is_verbose() else None
             setup_chatbot(
                 model_name=st.session_state["model"],
@@ -85,9 +85,7 @@ def main():
                             {"question": user_input, "chat_history": st.session_state["history"]},
                         )
 
-                        # print("source_documents: " + result['source_documents'])
                         # print(*result['source_documents'], sep="\n\n")
-
                         st.session_state["history"].append((user_input, result["answer"]))
                         st.session_state["chat_sources"] = result['source_documents']
 
@@ -99,7 +97,7 @@ def main():
                 history.generate_messages(response_container)
 
         except Exception as e:
-            st.error(f"Error: {str(e)}")
+            st.error(f"ERROR: {str(e)}")
 
     sidebar.about(app_name)
 
