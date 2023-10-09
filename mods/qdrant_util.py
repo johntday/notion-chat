@@ -104,7 +104,7 @@ def setup_chatbot(model_name, temperature, k, search_type, verbose):
     """
     Sets up the chatbot with the uploaded file, model, and temperature
     """
-    prompt_template = """SYSTEM: You are an AI expert with SAP Commerce Cloud, also known as Hybris.  Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question. If you do not know the answer reply with 'I am sorry'.\n
+    prompt_template = """SYSTEM: You are an AI expert with SAP Commerce Cloud, also known as Hybris.  Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question. Do not make up an answer, say you do not know.
         ---
         Chat History:
         {chat_history}

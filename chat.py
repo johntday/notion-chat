@@ -1,3 +1,5 @@
+import os
+
 import streamlit as st
 
 from mods.history import ChatHistory
@@ -23,6 +25,7 @@ def load_api_key() -> str:
         )
         if user_api_key:
             st.sidebar.success("API key loaded", icon="🚀")
+            os.environ["OPENAI_API_KEY"] = user_api_key
     return user_api_key
 
 
