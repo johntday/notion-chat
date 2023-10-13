@@ -9,7 +9,7 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import ConversationalRetrievalChain
 from langchain.chat_models import ChatOpenAI
 
-from mods.MyNotionDBLoader import MyNotionDBLoader
+from notion_utils.MyNotionDBLoader import MyNotionDBLoader
 from mods.load_util import split_documents
 
 

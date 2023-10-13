@@ -1,6 +1,6 @@
+git+https://github.com/johntday/notion-utils.git@main#egg=notion_utils
 requests~=2.31.0
 qdrant_client
-faiss-cpu
 langchain~=0.0.306
 openai~=0.28.1
 python-dotenv~=1.0.0
@@ -14,4 +14,4 @@ streamlit-chat
 # protobuf==3.20.*
 
 pandas~=2.1.1
-tenacity~=8.2.3
+#tenacity~=8.2.3
