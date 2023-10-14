@@ -1,11 +1,11 @@
 import os
 
 import streamlit as st
+from notion_chat.utils.llm_chain import setup_chatbot
 
-from mods.history import ChatHistory
-from mods.layout import Layout
-from mods.qdrant_util import setup_chatbot
-from mods.sidebar import Sidebar
+from utils.history import ChatHistory
+from utils.layout import Layout
+from utils.sidebar import Sidebar
 
 topic = "Hybris"
 app_name = f"{topic} ChatBot"

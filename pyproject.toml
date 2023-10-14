@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "notion-chat"
+version = "0.1.0"
+description = ""
+authors = ["John Day <johntday@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">3.11,<3.13"
+
+python-dotenv = "1.0.0"
+requests = "^2.31.0"
+langchain = "^0.0.314"
+openai = "^0.28.1"
+pypdf = "^3.16.2"
+"pdfminer.six" = "^20221105"
+tiktoken = "^0.5.1"
+pandas = "^2.1.1"
+notion_load = { git = "https://github.com/johntday/notion-load.git" }
+qdrant-client = "^1.6.0"
+streamlit = "^1.27.1"
+streamlit-chat = "0.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

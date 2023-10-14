@@ -127,7 +127,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-.streamlit/secrets.toml
+secrets.toml
 
 # Spyder project settings
 .spyderproject
@@ -152,15 +152,3 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
-
-# PyCharm
-#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
-#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
-#  and can be added to the global gitignore or merged into this file.  For a more nuclear
-#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
-.idea/
-/embeddings/
-/playground.py
-.DS_Store
-/example.py
-/notion_utils/

@@ -24,6 +24,7 @@ Follow these steps to set up and run the python app locally :
 ### Prerequisites
 - Python 3.8 or higher
 - Git
+- Poetry
 
 ### Installation
 Clone the repository :
@@ -38,34 +39,14 @@ Navigate to the project directory :
 cd notion-chat
 ```
 
-Create a virtual environment :
+Create a virtual environment and install requirements using Poetry :
 ```bash
-python -m venv venv
-source venv/bin/activate
-```
-
-Install the required dependencies in the virtual environment :
-
-```bash
-pip install -r requirements.txt
+poetry install
 ```
 
 Run the app locally :
 
 ```bash
+cd notion_chat
 streamlit run chat.py
 ```
-
-Crontab to load the Notion embeddings to Qdrant on a schedule :
-
-```bash
-crontab -e
-```
-
-Add the following line to the crontab file and write-quit (ESC and wq) :
-
-```bash
-0 0 * * * "cd /path/to/hybris-chatbot && source venv/bin/activate && python3 load.py notion qdrant -r >> /path to/notion-qdrant-load.log 2>&1"
-```
-
-This will run the load script every day at midnight and log the output to a file.
