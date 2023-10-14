@@ -163,3 +163,4 @@ cython_debug/
 /playground.py
 .DS_Store
 /example.py
+/notion_utils/

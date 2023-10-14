@@ -52,6 +52,7 @@ def load_qdrant(args):
         os.getenv("NOTION_TOKEN"),
         os.getenv("NOTION_DATABASE_ID"),
         args.verbose,
+        metadata_filter_list=['id', 'title', 'tags', 'version', 'source id', 'published', 'source', 'myid'],
     )
     docs = notion_loader.load()
     print(f"\nFetched {len(docs)} documents from Notion")

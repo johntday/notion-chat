@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 from mods.load_util import ntfy_notification
 from mods.qdrant_util import load_qdrant
 
-
 if __name__ == '__main__':
     load_dotenv(".streamlit/secrets.toml")
 
