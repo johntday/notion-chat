@@ -140,6 +140,7 @@ numpy = "*"
 packaging = "*"
 pandas = ">=0.25"
 toolz = "*"
+typing-extensions = {version = ">=4.0.1", markers = "python_version < \"3.11\""}
 
 [package.extras]
 dev = ["anywidget", "black (<24)", "hatch", "ipython", "m2r", "mypy", "pandas-stubs", "pyarrow (>=11)", "pytest", "pytest-cov", "ruff", "types-jsonschema", "types-setuptools", "vega-datasets", "vegafusion[embed] (>=1.4.0)", "vl-convert-python (>=0.14.0)"]
@@ -168,6 +169,7 @@ files = [
 ]
 
 [package.dependencies]
+exceptiongroup = {version = "*", markers = "python_version < \"3.11\""}
 idna = ">=2.8"
 sniffio = ">=1.1"
 
@@ -485,6 +487,20 @@ files = [
 [package.dependencies]
 marshmallow = ">=3.18.0,<4.0.0"
 typing-inspect = ">=0.4.0,<1"
+
+[[package]]
+name = "exceptiongroup"
+version = "1.1.3"
+description = "Backport of PEP 654 (exception groups)"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "exceptiongroup-1.1.3-py3-none-any.whl", hash = "sha256:343280667a4585d195ca1cf9cef84a4e178c4b6cf2274caef9859782b567d5e3"},
+    {file = "exceptiongroup-1.1.3.tar.gz", hash = "sha256:097acd85d473d75af5bb98e41b61ff7fe35efe6675e4f9370ec6ec5126d160e9"},
+]
+
+[package.extras]
+test = ["pytest (>=6)"]
 
 [[package]]
 name = "frozenlist"
@@ -1010,6 +1026,7 @@ files = [
 [package.dependencies]
 aiohttp = ">=3.8.3,<4.0.0"
 anyio = "<4.0"
+async-timeout = {version = ">=4.0.0,<5.0.0", markers = "python_version < \"3.11\""}
 dataclasses-json = ">=0.5.7,<0.7"
 jsonpatch = ">=1.33,<2.0"
 langsmith = ">=0.0.43,<0.1.0"
@@ -1273,7 +1290,7 @@ name = "notion-load"
 version = "0.1.2"
 description = "Load Notion database content into a Qdrant vector database"
 optional = false
-python-versions = ">3.11,<3.13"
+python-versions = ">3.9,<3.13"
 files = []
 develop = false
 
@@ -1293,14 +1310,14 @@ tiktoken = "^0.5.1"
 type = "git"
 url = "https://github.com/johntday/notion-load.git"
 reference = "HEAD"
-resolved_reference = "21ca7bf1cc6a57d7d6959f42d302c91d42a7a4fd"
+resolved_reference = "3697051d08248ba73953fa9e5c9774e975fdebe7"
 
 [[package]]
 name = "notion-utils"
 version = "0.1.0"
 description = ""
 optional = false
-python-versions = ">3.11,<3.13"
+python-versions = ">3.9,<3.13"
 files = []
 develop = false
 
@@ -1318,7 +1335,7 @@ tiktoken = "^0.5.1"
 type = "git"
 url = "https://github.com/johntday/notion-utils.git"
 reference = "HEAD"
-resolved_reference = "e483923e7ec6adb47d000bb0f88a6b2264881ca2"
+resolved_reference = "1372bc5c154f40d6835d2729c97b2e81933d95a9"
 
 [[package]]
 name = "numpy"
@@ -1430,6 +1447,7 @@ files = [
 
 [package.dependencies]
 numpy = [
+    {version = ">=1.22.4", markers = "python_version < \"3.11\""},
     {version = ">=1.23.2", markers = "python_version == \"3.11\""},
     {version = ">=1.26.0", markers = "python_version >= \"3.12\""},
 ]
@@ -1821,6 +1839,9 @@ files = [
     {file = "pypdf-3.16.4-py3-none-any.whl", hash = "sha256:a9b1eaf2db4c2edd93093470d33c3f353235c4a694f8a426a92a8ce77cea9eb7"},
     {file = "pypdf-3.16.4.tar.gz", hash = "sha256:01927771b562d4ba84939ef95b393f0179166da786c5db710d07f807c52f480d"},
 ]
+
+[package.dependencies]
+typing_extensions = {version = ">=3.7.4.3", markers = "python_version < \"3.10\""}
 
 [package.extras]
 crypto = ["PyCryptodome", "cryptography"]
@@ -2779,5 +2800,5 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 
 [metadata]
 lock-version = "2.0"
-python-versions = ">3.11,<3.13"
-content-hash = "40173c6e08e20f7c29c195356077ee4dd8334f921ea823e37b52b68426a70840"
+python-versions = ">3.9,<3.9.7 || >3.9.7,<3.13"
+content-hash = "01ef0b5606af4b8e789ba0d05a96d08aa58c0603c27f66d2d5009b02765c6e7b"
