@@ -50,3 +50,17 @@ Run the app locally :
 cd notion_chat
 streamlit run chat.py
 ```
+
+### Pycharm Run Configuration
+
+If you are using Pycharm, you can create a run configuration to run the app locally :
+
+![img.png](docs/images/img.png)
+
+## References
+- [Streamlit](https://streamlit.io/)
+- [Qdrant](https://qdrant.tech/)
+- [OpenAI](https://openai.com/blog/openai-api/)
+- [Notion](https://developers.notion.com/)
+- [Langchain](https://python.langchain.com/)
+- [Using Poetry](https://johntday.github.io/python-poetry/)
