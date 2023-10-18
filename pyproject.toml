@@ -1,22 +1,24 @@
 [tool.poetry]
 name = "notion-chat"
 version = "0.1.0"
-description = ""
+description = "RAG chatbot for Notion database content and PDFs.  Embeddings stored in Qdrant vector database."
 authors = ["John Day <johntday@gmail.com>"]
 readme = "README.md"
+license = "MIT"
+
 
 [tool.poetry.dependencies]
 python = ">3.9,<3.9.7 || >3.9.7,<3.13"
 
 python-dotenv = "1.0.0"
 requests = "^2.31.0"
-langchain = "^0.0.316"
+langchain = "^0.0.317"
 openai = "^0.28.1"
 pypdf = "^3.16.2"
 "pdfminer.six" = "^20221105"
 tiktoken = "^0.5.1"
 pandas = "^2.1.1"
-notion_load = { git = "https://github.com/johntday/notion-load.git" }
+notion_load = { git = "https://github.com/johntday/notion-load.git", tag="0.1.2" }
 qdrant-client = "^1.6.0"
 streamlit = "^1.27.1"
 
