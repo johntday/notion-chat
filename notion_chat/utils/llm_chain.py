@@ -65,9 +65,12 @@ def qa(query,
         combine_docs_chain=doc_chain,
         question_generator=question_generator,
         verbose=verbose,
+        return_source_documents=True,
     )
 
     result = qa({"question": query, "chat_history": history})
+
+    st.session_state["chat_sources"] = result['source_documents']
     return result["answer"]
 
 

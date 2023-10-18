@@ -70,13 +70,13 @@ def main():
                 full_response = ""
 
                 for response in llm_chain.qa(
-                    query=prompt,
-                    model_name=st.session_state["model"],
-                    temperature=st.session_state["temperature"],
-                    k=st.session_state["k_slider"],
-                    search_type=st.session_state["search_type"],
-                    history=st.session_state["history"],
-                    verbose=is_verbose(),
+                        query=prompt,
+                        model_name=st.session_state["model"],
+                        temperature=st.session_state["temperature"],
+                        k=st.session_state["k_slider"],
+                        search_type=st.session_state["search_type"],
+                        history=st.session_state["history"],
+                        verbose=is_verbose(),
                 ):
                     full_response += response
                     message_placeholder.markdown(full_response + "▌")
@@ -85,7 +85,7 @@ def main():
             st.session_state.messages.append({"role": "user", "content": prompt})
             st.session_state.messages.append({"role": "assistant", "content": full_response})
             st.session_state.history.append((prompt, full_response))
-
+            sidebar.show_sources(st.session_state["chat_sources"])
 
 
 if __name__ == "__main__":
