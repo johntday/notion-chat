@@ -12,7 +12,7 @@ An experimental AI chatbot using Notion database as knowledge base. The chatbot 
 
 ## DEMO
 Use the following link to try it out :
-[Chatbot using a knowledge base pulled from Notion database](https://johntday-notion-chat-chat-xcbtq4.streamlit.app/)
+[Chatbot using a knowledge base pulled from Notion database](https://notion-chat-johntday.streamlit.app/)
 
 fixme: qdrant
 
