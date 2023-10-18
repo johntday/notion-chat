@@ -2431,20 +2431,6 @@ watchdog = {version = ">=2.1.5", markers = "platform_system != \"Darwin\""}
 snowflake = ["snowflake-connector-python (>=2.8.0)", "snowflake-snowpark-python (>=0.9.0)"]
 
 [[package]]
-name = "streamlit-chat"
-version = "0.1.1"
-description = "A streamlit component, to make chatbots"
-optional = false
-python-versions = ">=3.6"
-files = [
-    {file = "streamlit-chat-0.1.1.tar.gz", hash = "sha256:e5911c8e3d5bbdd444782a0eb46a5f0cf24247124eb165bcc2e759540767ac3c"},
-    {file = "streamlit_chat-0.1.1-py3-none-any.whl", hash = "sha256:bec918a6ff9d24fbc842d5a0e7c492e30e1ef71c3a72b94b0cb4be1a7300881e"},
-]
-
-[package.dependencies]
-streamlit = ">=0.63"
-
-[[package]]
 name = "tenacity"
 version = "8.2.3"
 description = "Retry code until it succeeds"
@@ -2801,4 +2787,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">3.9,<3.9.7 || >3.9.7,<3.13"
-content-hash = "2be1c7459196c07579f3fe48b0a9a15c33e7b3108f3c34b33d3601cb151c21e5"
+content-hash = "8870ae5494eed9761e5aade9c6a92dcf295c4b1c34828c40302796c1901b711e"

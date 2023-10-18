@@ -1,9 +1,11 @@
 import os
+import openai
 
 import streamlit as st
+
+from notion_chat.utils import llm_chain
 from notion_chat.utils.llm_chain import setup_chatbot
 
-from utils.history import ChatHistory
 from utils.layout import Layout
 from utils.sidebar import Sidebar
 
@@ -46,63 +48,44 @@ def main():
     if not user_api_key:
         layout.show_api_key_missing()
     else:
-        if "chatbot" not in st.session_state:
-            print("Setting up chatbot...") if is_verbose() else None
-            setup_chatbot(
-                model_name=st.session_state["model"],
-                temperature=st.session_state["temperature"],
-                k=st.session_state["k_slider"],
-                search_type=st.session_state["search_type"],
-                verbose=is_verbose(),
-            )
-            st.session_state["ready"] = True
-
-        history = ChatHistory()
         sidebar.show_options()
+        sidebar.about(app_name)
 
-        try:
-            if st.session_state["ready"]:
-                response_container, prompt_container = st.container(), st.container()
+        if "messages" not in st.session_state:
+            st.session_state.messages = []
 
-                with prompt_container:
-                    is_ready, user_input = layout.prompt_form()
-                    history.initialize(topic)
+        if "history" not in st.session_state:
+            st.session_state.history = []
 
-                    if st.session_state["reset_chat"]:
-                        history.reset(topic)
+        for message in st.session_state.messages:
+            with st.chat_message(message["role"]):
+                st.markdown(message["content"])
 
-                    if is_ready:
-                        if st.session_state["chatbot_reset"]:
-                            print("Resetting chatbot...") if is_verbose() else None
-                            setup_chatbot(
-                                model_name=st.session_state["model"],
-                                temperature=st.session_state["temperature"],
-                                k=st.session_state["k_slider"],
-                                search_type=st.session_state["search_type"],
-                                verbose=is_verbose(),
-                            )
+        if prompt := st.chat_input("What is up?"):
+            with st.chat_message("user"):
+                st.markdown(prompt)
 
-                        print("chat_history before call: " + str(st.session_state["history"])) if is_verbose() else None
+            with st.chat_message("assistant"):
+                message_placeholder = st.empty()
+                full_response = ""
 
-                        result = st.session_state["chatbot"](
-                            {"question": user_input, "chat_history": st.session_state["history"]},
-                        )
+                for response in llm_chain.qa(
+                    query=prompt,
+                    model_name=st.session_state["model"],
+                    temperature=st.session_state["temperature"],
+                    k=st.session_state["k_slider"],
+                    search_type=st.session_state["search_type"],
+                    history=st.session_state["history"],
+                    verbose=is_verbose(),
+                ):
+                    full_response += response
+                    message_placeholder.markdown(full_response + "▌")
+                message_placeholder.markdown(full_response)
 
-                        # print(*result['source_documents'], sep="\n\n")
-                        st.session_state["history"].append((user_input, result["answer"]))
-                        st.session_state["chat_sources"] = result['source_documents']
+            st.session_state.messages.append({"role": "user", "content": prompt})
+            st.session_state.messages.append({"role": "assistant", "content": full_response})
+            st.session_state.history.append((prompt, full_response))
 
-                        history.append("user", user_input)
-                        history.append("assistant", result["answer"])
-
-                        sidebar.show_sources(st.session_state["chat_sources"])
-
-                history.generate_messages(response_container)
-
-        except Exception as e:
-            st.error(f"ERROR: {str(e)}")
-
-    sidebar.about(app_name)
 
 
 if __name__ == "__main__":
