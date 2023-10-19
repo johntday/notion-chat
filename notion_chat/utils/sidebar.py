@@ -42,13 +42,14 @@ class Sidebar:
 
     @staticmethod
     def on_change():
-        st.session_state["chatbot_reset"] = True
+        # st.session_state["chatbot_reset"] = True
+        pass
 
     @staticmethod
     def reset_chat_button():
         if st.button("Reset chat"):
-            st.session_state["reset_chat"] = True
-        st.session_state.setdefault("reset_chat", False)
+            st.session_state.messages = []
+            st.session_state.history = []
 
     def model_selector(self):
         model = st.selectbox(label="Model", options=self.MODEL_OPTIONS, on_change=self.on_change)

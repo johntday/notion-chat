@@ -46,8 +46,8 @@ def qa(query,
 
     # Construct a ConversationalRetrievalChain with a streaming llm for combine docs
     # and a separate, non-streaming llm for question generation
-    llm = ChatOpenAI(temperature=0, model_name=model_name)
-    streaming_llm = ChatOpenAI(streaming=True, model_name=model_name, callbacks=[StreamingStdOutCallbackHandler()], temperature=0)
+    llm = ChatOpenAI(temperature=temperature, model_name=model_name)
+    streaming_llm = ChatOpenAI(streaming=True, model_name=model_name, callbacks=[StreamingStdOutCallbackHandler()], temperature=temperature)
 
     question_generator = LLMChain(
         llm=llm,

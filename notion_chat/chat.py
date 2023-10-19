@@ -59,7 +59,7 @@ def main():
             with st.chat_message(message["role"]):
                 st.markdown(message["content"])
 
-        if prompt := st.chat_input("What is up?"):
+        if prompt := st.chat_input("Ask me a question about Hybris"):
             with st.chat_message("user"):
                 st.markdown(prompt)
 
