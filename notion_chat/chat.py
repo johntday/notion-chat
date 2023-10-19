@@ -1,10 +1,8 @@
 import os
-import openai
 
 import streamlit as st
 
 from notion_chat.utils import llm_chain
-from notion_chat.utils.llm_chain import setup_chatbot
 
 from utils.layout import Layout
 from utils.sidebar import Sidebar
