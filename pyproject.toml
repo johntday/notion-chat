@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "notion-chat"
-version = "0.1.0"
+version = "0.1.2"
 description = "RAG chatbot for Notion database content and PDFs.  Embeddings stored in Qdrant vector database."
 authors = ["John Day <johntday@gmail.com>"]
 readme = "README.md"
