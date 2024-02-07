@@ -10,14 +10,6 @@ An experimental AI chatbot using Notion database as knowledge base. The chatbot 
 - [OpenAI](https://openai.com/blog/openai-api/) for text generation and embeddings
 - [Notion](https://developers.notion.com/) for fetching content and metadata from Notion database
 
-## DEMO
-Use the following link to try it out :
-[Chatbot using a knowledge base pulled from Notion database](https://notion-chat-johntday.streamlit.app/)
-
-fixme: qdrant
-
-fixme: notion
-
 ## HOW TO RUN THE APP LOCALLY
 Follow these steps to set up and run the python app locally :
 
