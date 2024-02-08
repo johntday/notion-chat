@@ -29,11 +29,20 @@ Navigate to the project directory :
 
 ```bash
 cd notion-chat
+# now at project root
 ```
 
 Create a virtual environment and install requirements using Poetry :
 ```bash
 poetry install
+```
+
+Setup Environment Variables :
+```bash
+# at project root
+cp notion_chat/.streamlit/secrets.toml.example notion_chat/.streamlit/secrets.toml
+
+# edit the "secrets.toml" file and add your OpenAI API key
 ```
 
 Run the app locally :
